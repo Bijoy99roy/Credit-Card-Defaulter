@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="form-block">
+        <form class="row" action="/input" method="POST">
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Balance Limit</label>
+                    <input name="LIMIT_BAL" type="tel" class="form-control" placeholder="ex: 10000">
+                </div>
+              </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Sex</label>
+                     <select name="SEX" class="form-control">
+                        <option selected>MALE</option>
+                         <option selected>FEMALE</option>
+                  </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                  <label>Education</label>
+
+                  <select name="EDUCATION" class="form-control">
+                      {%for option in data['educations'] %}
+                        <option selected>{{option}}</option>
+                      {% endfor %}
+                  </select>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>AGE</label>
+                    <input name="Age" type="tel" class="form-control" placeholder="ex: 35">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                  <label>Repayment Status(September)</label>
+                  <select name="PAY_0" class="form-control">
+                      {%for option in data['pays'] %}
+                        <option selected>{{option}}</option>
+                      {% endfor %}
+                  </select>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                  <label>Repayment Status(August)</label>
+                  <select name="PAY_2" class="form-control">
+                      {%for option in data['pays'] %}
+                        <option selected>{{option}}</option>
+                      {% endfor %}
+                  </select>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                  <label>Repayment Status(July)</label>
+                  <select name="PAY_3" class="form-control">
+                      {%for option in data['pays'] %}
+                        <option selected>{{option}}</option>
+                      {% endfor %}
+                  </select>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                  <label>Repayment Status(June)</label>
+                  <select name="PAY_4" class="form-control">
+                      {%for option in data['pays'] %}
+                        <option selected>{{option}}</option>
+                      {% endfor %}
+                  </select>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                  <label>Repayment Status(May)</label>
+                  <select name="PAY_5" class="form-control">
+                      {%for option in data['pays'] %}
+                        <option selected>{{option}}</option>
+                      {% endfor %}
+                  </select>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                  <label>Repayment Status(April)</label>
+                  <select name="PAY_6" class="form-control">
+                      {%for option in data['pays'] %}
+                        <option selected>{{option}}</option>
+                      {% endfor %}
+                  </select>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Bill Statement(September)</label>
+                    <input name="BILL_AMT1" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Bill Statement(August)</label>
+                    <input name="BILL_AMT2" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Bill Statement(July)</label>
+                    <input name="BILL_AMT3" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Bill Statement(June)</label>
+                    <input name="BILL_AMT4" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Bill Statement(May)</label>
+                    <input name="BILL_AMT5" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Bill Statement(April)</label>
+                    <input name="BILL_AMT6" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Previous Payment(September)</label>
+                    <input name="PAY_AMT1" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Previous Payment(August)</label>
+                    <input name="PAY_AMT2" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Previous Payment(July)</label>
+                    <input name="PAY_AMT3" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Previous Payment(June)</label>
+                    <input name="PAY_AMT4" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Previous Payment(May)</label>
+                    <input name="PAY_AMT5" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                   <label>Previous Payment(April)</label>
+                    <input name="PAY_AMT6" type="tel" class="form-control" placeholder="ex: 1000">
+                </div>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit" style="height: 50px;margin-top: 22px;">
+        </form>
+    </div>
+
+</div>
+{% endblock content %}

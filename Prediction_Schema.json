@@ -1,0 +1,34 @@
+{
+  "columnNumber":22,
+  "columnNames": {
+
+    "SEX": {
+      "MALE": 1,
+      "FEMALE": 0
+    },
+    "EDUCATION":
+    {
+      "GRADUATE_SCHOOL": 1,
+      "UNIVERSITY": 2,
+      "HIGH_SCHOOL": 3,
+      "OTHERS": 4
+    },
+    "PAY": {
+      "NO_CONSUMPTION": -2,
+      "PAY_DULY": -1,
+      "USE_OF_REVOLTING_CREDIT": 0,
+      "ONE_MONTH": 1,
+      "TWO_MONTH": 2,
+      "THREE_MONTH": 3,
+      "FOUR_MONTH": 4,
+      "FIVE_MONTH": 5,
+      "SIX_MONTH": 6,
+      "SEVEN_MONTH": 7,
+      "EIGHT_MONTH": 8,
+      "NINE_ABOVE_MONTH": 9
+    }
+  },
+  "RequiredColumns": ["LIMIT_BAL", "SEX","EDUCATION","AGE","PAY_0","PAY2","PAY3","PAY_4","PAY_5","PAY_6","BILL_AMT1","BILL_AMT2","BILL_AMT3","BILL_AMT4","BILL_AMT5","BILL_AMT6","PAY_AMT1","PAY_AMT2","PAY_AMT3","PAY_AMT4","PAY_AMT5","PAY_AMT6"],
+  "Numerical": ["AGE","LIMIT_BAL","BILL_AMT1","BILL_AMT2","BILL_AMT3","BILL_AMT4","BILL_AMT5","BILL_AMT6","PAY_AMT1","PAY_AMT2","PAY_AMT3","PAY_AMT4","PAY_AMT5","PAY_AMT6"]
+
+}
