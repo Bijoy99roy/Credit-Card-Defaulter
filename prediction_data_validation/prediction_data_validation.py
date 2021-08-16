@@ -4,6 +4,7 @@ import json
 import os
 import shutil
 import pandas as pd
+import numpy as np
 
 class PredictionDataValidation:
     def __init__(self):
@@ -65,6 +66,7 @@ class PredictionDataValidation:
             columnNumber = dic["columnNumber"]
             requiredColumns = dic["RequiredColumns"]
             numericalColumns = dic["Numerical"]
+            outputColumns = dic["Output"]
 
 
             message = "ColumnNumber: "+str(columnNumber)+"\t"+"RequiredColumns: "+str(requiredColumns)+"\n"
@@ -87,57 +89,26 @@ class PredictionDataValidation:
             self.logger.log(file, str(e), 'Error')
             file.close()
             raise  e
-        #returning tuple of these 3 values
-        return columnNumber, columnNames, requiredColumns, numericalColumns
+        #returning tuple of these 4 values
+        return columnNumber, columnNames, requiredColumns, numericalColumns, outputColumns
 
-    '''
-    def validateColumnLength(self, columnNumber):
-        """
-        This function validates the number of columns in the provided data
-        :param columnNumber:
-        :return:
-        """
+    def ValidateDataType(self):
+
+        file = open("Prediction_Log/ValidationLog.txt", 'a+')
         try:
-            f = open("Prediction_Log/columnValidationLog.txt", 'a+')
-            self.logger.log(f, "Column Length Validation Started!!", 'Info')
-            for file in os.listdir('Prediction_Files/'):
-                csv = pd.read_csv('Prediction_Files/'+file)
-                if csv.shape[1] == columnNumber:
+            self.logger.log(file, 'Entered ValidateDataType method of PredictionDataValidation class', 'Info')
+            data = pd.read_csv('Prediction_Files/input.csv')
+
+            for i in data.dtypes:
+                if i == np.int64 or i == np.float64:
                     pass
                 else:
-                    self.logger.log(f, "Invalid column length for the file!! Exiting...", 'Error')
-                    raise Exception(f"Invalid column length for the file!!. Column should be {columnNumber}, {csv.shape[1]} found")
-            self.logger.log(f, "Columns length validation complete!!")
+                    self.logger.log(file,'Failed valiadtion. Exiting.....', 'Error')
+                    raise Exception('Different Datatype found..')
+            self.logger.log(file, 'Datatype validation complete exiting ValidateDataType method of PredictionDataValidation class', 'Info')
         except Exception as e:
-            self.logger.log(f, str(e), 'Error')
-            f.close()
+            self.logger.log(file, 'Error occured in Validating datatypes. Message: '+str(e),'Error')
+            self.logger.log(file, 'Failed to validate datatype. Exiting.....', 'Error')
             raise e
-        f.close()
-    '''
-    '''
-    def getRequiredColumns(self, requiredColumns):
-        """
-        This function extracts the columns that are required
-        :param requiredColumns:
-        :return: columns:List
-        """
-        try:
-            columns = None
-            f = open("Prediction_Log/RequiredColumnsLog.txt", 'a+')
-            self.logger.log(f, "Getting required columns...", 'Info')
-            for file in os.listdir('Prediction_Files/'):
-                csv = pd.read_csv('Prediction_Files/'+file)
-                columns = csv[requiredColumns].copy()
-                self.logger.log(f,'Columns aquired from '+file, 'Info')
-        except Exception as e:
-            self.logger.log(f, 'Exception occured in getRequiredColumns method in PredictionDataValidation class. Message: '+str(e), 'Error')
-            f.close()
-            raise e
-        f.close()
-        return columns
-
-    '''
-
-
 
 

@@ -15,7 +15,7 @@
   {% for index, data in result[0] %}
     <tr>
       <th scope="row">{{index+1}}</th>
-      <td>{{data[0]}}</td>
+      <td>{{data[index]}}</td>
       <td>{{data[1]}}</td>
         <td>{{data[2]}}</td>
         <td>{{data[3]}}</td>
@@ -38,6 +38,7 @@
         <td>{{data[20]}}</td>
         <td>{{data[21]}}</td>
         <td>{{data[22]}}</td>
+      <td>{{data[23]}}</td>
 
     </tr>
   {% endfor %}

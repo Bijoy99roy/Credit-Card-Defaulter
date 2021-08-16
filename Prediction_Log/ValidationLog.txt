@@ -1,0 +1,6 @@
+2021-08-15/13:29:05: Info :		Entered ValidateDataType method of PredictionDataValidation class
+2021-08-15/13:29:05: Info :		Datatype validation complete exiting ValidateDataType method of PredictionDataValidation class
+2021-08-15/13:30:27: Info :		Entered ValidateDataType method of PredictionDataValidation class
+2021-08-15/13:30:27: Error :		Failed valiadtion. Exiting.....
+2021-08-15/13:30:27: Error :		Error occured in Validating datatypes. Message: Different Datatype found..
+2021-08-15/13:30:27: Error :		Failed to validate datatype. Exiting.....

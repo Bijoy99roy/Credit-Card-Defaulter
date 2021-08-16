@@ -7,7 +7,7 @@ import os
 from application_logging.logger import App_Logger
 import pandas as pd
 from flask_cors import cross_origin
-
+from zipfile import ZipFile
 from werkzeug.utils import secure_filename
 app = Flask(__name__)
 logger = App_Logger()
@@ -159,6 +159,23 @@ def download():
     """
     try:
         return send_file(os.path.join('Prediction_Files/')+'Prediction.csv', as_attachment=True)
+    except Exception as e:
+        message = 'Error :: ' + str(e)
+        return render_template('exception.html', exception=message)
+
+@app.route('/getLogs',methods=['GET'])
+@cross_origin()
+def getLogs():
+    """
+    Returns logs for inspection of the system
+    :return: ZIP of log
+    """
+    try:
+        logFiles = os.listdir('Prediction_Log/')
+        with ZipFile("Prediction_Files/Logs.zip", "w") as newzip:
+            for i in logFiles:
+                newzip.write("Prediction_Log/"+i)
+        return send_file(os.path.join('Prediction_Files/')+'Logs.zip', as_attachment=True)
     except Exception as e:
         message = 'Error :: ' + str(e)
         return render_template('exception.html', exception=message)
