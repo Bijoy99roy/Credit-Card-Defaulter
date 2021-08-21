@@ -1,18 +1,16 @@
-#performing important imports
+# performing important imports
+import pandas as pd
+import os
 import numpy as np
-
-from application_logging.logger import App_Logger
+from application_logging.logger import AppLogger
 from prediction_data_validation.prediction_data_validation import PredictionDataValidation
 from data_preprocessing.preprocessing import PreProcessing
 from file_operation.file_handler import FileHandler
-import pandas as pd
-import os
-
 
 
 class Prediction:
     def __init__(self):
-        self.logger = App_Logger()
+        self.logger = AppLogger()
         self.file_object = open("Prediction_Log/Prediction_Log.txt", 'a+')
         self.pred_data_val = PredictionDataValidation()
 
@@ -23,46 +21,47 @@ class Prediction:
         """
         try:
             self.logger.log(self.file_object, 'Start of Prediction', 'Info')
-            #initializing PreProcessor object
-            self.preprocessor = PreProcessing(self.file_object, self.logger)
-            #initializing FileHandler object
-            self.model = FileHandler(self.file_object, self.logger)
-            #getting the data file path
+            # initializing PreProcessor object
+            preprocessor = PreProcessing(self.file_object, self.logger)
+            # initializing FileHandler object
+            model = FileHandler(self.file_object, self.logger)
+            # getting the data file path
             file = os.listdir('Prediction_Files/')[0]
-            #reading data file
+            # reading data file
             dataframe = pd.read_csv('Prediction_Files/'+file)
-            self.data = dataframe.copy()
-
-            #recieving values as tuple
-            columninfo = self.pred_data_val.getSchemaValues()
-
-            numericalColumns = columninfo[3]
+            data = dataframe.copy()
+            # receiving values as tuple
+            columninfo = self.pred_data_val.get_schema_values()
+            numerical_columns = columninfo[3]
             # Scaling the data
+            data = preprocessor.scale_data(data, numerical_columns)
+            data = np.array(data)
 
-            self.data = self.preprocessor.ScaleData(self.data, numericalColumns)
+            # loading Logistic Regression model
+            support_vector_classifier = model.load_model('supportVectorClassifier')
 
-            self.data = np.array(self.data)
-
-
-
-            #loading Logistic Regression model
-            supportVectorClassifier = self.model.loadModel('supportVectorClassifier')
-
-            #predicting
-            predicted = supportVectorClassifier.predict(self.data)
-            probablity = supportVectorClassifier.predict_proba(self.data)[0]
+            # predicting
+            predicted = support_vector_classifier.predict(data)
+            probablity = support_vector_classifier.predict_proba(data)[0]
 
             dataframe['predicted'] = ['Defaulter' if i == 0 else 'Not defaulter' for i in predicted]
-            dataframe['probablity'] = [round(max(probablity) * 100,2)]
+            dataframe['probablity'] = [round(max(probablity) * 100, 2)]
             print(dataframe)
             dataframe.to_csv('Prediction_Files/Prediction.csv')
-            self.logger.log(self.file_object, 'Predction complete!!. Prediction.csv saved in Prediction_File as output. Exiting Predict method of Prediction class ', 'Info')
-            #converting dict array to list
+            self.logger.log(
+                self.file_object,
+                'Predction complete!!. Prediction.csv saved in Prediction_File as output. \
+                Exiting Predict method of Prediction class ',
+                'Info')
+            # converting dict array to list
             columninfo = columninfo[4]
             columninfo.append('prediction')
             columninfo.append('probablity')
             return dataframe.to_numpy(), columninfo
 
         except Exception as e:
-            self.logger.log(self.file_object, 'Error occured while running the prediction!! Message: '+ str(e),'Error')
+            self.logger.log(
+                self.file_object,
+                'Error occured while running the prediction!! Message: ' + str(e),
+                'Error')
             raise e
