@@ -14,10 +14,10 @@ class PredictionDataValidation:
 
     def delete_prediction_files(self):
         """
-        Deletes the Prediction_Log directory and it's content
+        Deletes the prediction_log directory and it's content
         :return:
         """
-        file = open("Prediction_Log/folderHandling.txt", 'a+')
+        file = open("prediction_log/folderHandling.txt", 'a+')
         try:
             self.logger.log(file, 'Entered deletePredictionFiles method of PredictionDataValidation class', 'Info')
             shutil.rmtree('Prediction_Files/')
@@ -41,7 +41,7 @@ class PredictionDataValidation:
         :param folder_name:
         :return:
         """
-        file = open("Prediction_Log/folderHandling.txt", 'a+')
+        file = open("prediction_log/folderHandling.txt", 'a+')
         try:
             self.logger.log(file, 'Entered createPredictionFiles method of PredictionDataValidation class', 'Info')
 
@@ -64,7 +64,7 @@ class PredictionDataValidation:
         Retrives important data from Schema
         :return:
         """
-        file = open("Prediction_Log/valuesFromSchemaLog.txt", 'a+')
+        file = open("prediction_log/valuesFromSchemaLog.txt", 'a+')
         try:
 
             self.logger.log(file, 'Entered getSchemaValue method of PredictionDataValidation class', 'Info')
@@ -102,12 +102,13 @@ class PredictionDataValidation:
 
     def validate_data_type(self):
 
-        file = open("Prediction_Log/ValidationLog.txt", 'a+')
+        file = open("prediction_log/ValidationLog.txt", 'a+')
         try:
             self.logger.log(file, 'Entered ValidateDataType method of PredictionDataValidation class', 'Info')
             data = pd.read_csv('Prediction_Files/input.csv')
 
             for i in data.dtypes:
+                print(data.dtypes)
                 if i == np.int64 or i == np.float64:
                     pass
                 else:

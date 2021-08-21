@@ -1,47 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="/download"><button type="button" class="btn btn-success">Download</button></a>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-        {% for head in result[1] %}
-          <th>{{head}}</th>
-        {% endfor %}
-    </tr>
-  </thead>
-  <tbody>
-  {% for index, data in result[0] %}
-    <tr>
-      <th scope="row">{{index+1}}</th>
-      <td>{{data[index]}}</td>
-      <td>{{data[1]}}</td>
-        <td>{{data[2]}}</td>
-        <td>{{data[3]}}</td>
-        <td>{{data[4]}}</td>
-        <td>{{data[5]}}</td>
-        <td>{{data[6]}}</td>
-        <td>{{data[7]}}</td>
-        <td>{{data[8]}}</td>
-        <td>{{data[9]}}</td>
-        <td>{{data[10]}}</td>
-        <td>{{data[11]}}</td>
-        <td>{{data[12]}}</td>
-        <td>{{data[13]}}</td>
-        <td>{{data[14]}}</td>
-        <td>{{data[15]}}</td>
-        <td>{{data[16]}}</td>
-        <td>{{data[17]}}</td>
-        <td>{{data[18]}}</td>
-        <td>{{data[19]}}</td>
-        <td>{{data[20]}}</td>
-        <td>{{data[21]}}</td>
-        <td>{{data[22]}}</td>
-      <td>{{data[23]}}</td>
+<div class="block">
+  <div class="card text-center">
+      <div class="card-header">
+        Result
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">There is a {{result["probability"]}}% chance that user {{result["output"]}}</h5>
 
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
+      </div>
+  </div>
+</div>
 {% endblock %}

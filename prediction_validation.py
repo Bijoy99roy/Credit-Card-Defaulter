@@ -9,7 +9,7 @@ class PredictionValidation:
         self.logger = AppLogger()
 
     def validation(self):
-        file = open("Prediction_Log/Prediction_Log.txt", "a+")
+        file = open("prediction_log/Prediction_Log.txt", "a+")
         try:
             self.logger.log(file, "Validation started for Prediction Data")
             # validating Datatype

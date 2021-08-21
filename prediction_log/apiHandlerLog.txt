@@ -116,3 +116,55 @@ Reshape your data either using array.reshape(-1, 1) if your data has a single fe
 2021-08-15/13:30:27: Info :		Getting input from Form
 2021-08-15/13:30:27: Info :		Prediction Initiated..
 2021-08-15/13:30:27: Error :		Error occured in prediction. Message: Different Datatype found..
+2021-08-21/12:52:05: Info :		Initiating app
+2021-08-21/12:52:05: Info :		Deletion and creation of Prediction_Files complete. Exiting method...
+2021-08-21/12:52:44: Info :		Getting input from Form
+2021-08-21/12:52:45: Error :		Error occured in getting input from Form. Message: Shape of passed values is (1, 1), indices imply (1, 22)
+2021-08-21/12:54:38: Info :		Getting input from Form
+2021-08-21/12:54:38: Error :		Error occured in getting input from Form. Message: Shape of passed values is (1, 1), indices imply (1, 22)
+2021-08-21/12:57:19: Info :		Getting input from Form
+2021-08-21/12:57:19: Error :		Error occured in getting input from Form. Message: Shape of passed values is (1, 1), indices imply (1, 22)
+2021-08-21/13:02:16: Info :		Getting input from Form
+2021-08-21/13:02:16: Error :		Error occured in getting input from Form. Message: Shape of passed values is (1, 1), indices imply (1, 22)
+2021-08-21/13:02:44: Info :		Getting input from Form
+2021-08-21/13:02:44: Error :		Error occured in getting input from Form. Message: Shape of passed values is (1, 1), indices imply (1, 22)
+2021-08-21/13:03:33: Info :		Initiating app
+2021-08-21/13:03:33: Info :		Deletion and creation of Prediction_Files complete. Exiting method...
+2021-08-21/13:04:02: Info :		Getting input from Form
+2021-08-21/13:04:02: Error :		Error occured in getting input from Form. Message: Shape of passed values is (1, 1), indices imply (1, 22)
+2021-08-21/13:06:10: Info :		Getting input from Form
+2021-08-21/13:06:10: Error :		Error occured in getting input from Form. Message: Shape of passed values is (1, 1), indices imply (1, 22)
+2021-08-21/13:06:43: Info :		Getting input from Form
+2021-08-21/13:06:43: Info :		Prediction Initiated..
+2021-08-21/13:06:43: Error :		Error occured in prediction. Message: Different Datatype found..
+2021-08-21/13:09:09: Info :		Getting input from Form
+2021-08-21/13:09:09: Info :		Prediction Initiated..
+2021-08-21/13:09:09: Error :		Error occured in prediction. Message: Different Datatype found..
+2021-08-21/13:09:19: Info :		Getting input from Form
+2021-08-21/13:09:19: Info :		Prediction Initiated..
+2021-08-21/13:09:19: Error :		Error occured in prediction. Message: Different Datatype found..
+2021-08-21/13:09:49: Info :		Getting input from Form
+2021-08-21/13:09:49: Info :		Prediction Initiated..
+2021-08-21/13:09:49: Error :		Error occured in prediction. Message: Different Datatype found..
+2021-08-21/13:10:31: Info :		Getting input from Form
+2021-08-21/13:10:31: Info :		Prediction Initiated..
+2021-08-21/13:10:31: Error :		Error occured in prediction. Message: Different Datatype found..
+2021-08-21/13:12:27: Info :		Getting input from Form
+2021-08-21/13:12:27: Info :		Prediction Initiated..
+2021-08-21/13:12:42: Info :		Prediction for data complete
+2021-08-21/13:14:24: Info :		Getting input from Form
+2021-08-21/13:14:24: Info :		Initiating app
+2021-08-21/13:14:24: Info :		Deletion and creation of Prediction_Files complete. Exiting method...
+2021-08-21/13:15:21: Info :		Getting input from Form
+2021-08-21/13:15:21: Info :		Prediction Initiated..
+2021-08-21/13:15:24: Info :		Prediction for data complete
+2021-08-21/13:17:44: Info :		Initiating app
+2021-08-21/13:17:44: Info :		Deletion and creation of Prediction_Files complete. Exiting method...
+2021-08-21/13:19:00: Info :		Getting input from Form
+2021-08-21/13:19:00: Info :		Prediction Initiated..
+2021-08-21/13:19:03: Info :		Prediction for data complete
+2021-08-21/14:39:49: Info :		Initiating app
+2021-08-21/14:39:49: Info :		Deletion and creation of Prediction_Files complete. Exiting method...
+2021-08-21/14:40:24: Info :		Getting input from Form
+2021-08-21/14:40:24: Info :		Prediction Initiated..
+2021-08-21/14:40:27: Info :		Prediction for data complete

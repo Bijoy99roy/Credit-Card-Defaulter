@@ -11,7 +11,7 @@ from file_operation.file_handler import FileHandler
 class Prediction:
     def __init__(self):
         self.logger = AppLogger()
-        self.file_object = open("Prediction_Log/Prediction_Log.txt", 'a+')
+        self.file_object = open("prediction_log/prediction_log.txt", 'a+')
         self.pred_data_val = PredictionDataValidation()
 
     def predict(self):
@@ -42,22 +42,20 @@ class Prediction:
 
             # predicting
             predicted = support_vector_classifier.predict(data)
-            probablity = support_vector_classifier.predict_proba(data)[0]
+            probability = support_vector_classifier.predict_proba(data)[0]
 
-            dataframe['predicted'] = ['Defaulter' if i == 0 else 'Not defaulter' for i in predicted]
-            dataframe['probablity'] = [round(max(probablity) * 100, 2)]
-            print(dataframe)
-            dataframe.to_csv('Prediction_Files/Prediction.csv')
+            output = 'may be default' if predicted == 1 else 'may not default'
+            probability = round(max(probability) * 100, 2)
             self.logger.log(
                 self.file_object,
                 'Predction complete!!. Prediction.csv saved in Prediction_File as output. \
                 Exiting Predict method of Prediction class ',
                 'Info')
-            # converting dict array to list
-            columninfo = columninfo[4]
-            columninfo.append('prediction')
-            columninfo.append('probablity')
-            return dataframe.to_numpy(), columninfo
+            # # converting dict array to list
+            # columninfo = columninfo[4]
+            # columninfo.append('prediction')
+            # columninfo.append('probablity')
+            return output, probability
 
         except Exception as e:
             self.logger.log(

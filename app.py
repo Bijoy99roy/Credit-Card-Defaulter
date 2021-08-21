@@ -4,7 +4,7 @@ import pandas as pd
 from flask_cors import cross_origin
 from zipfile import ZipFile
 from flask import Flask, request, render_template, send_file, redirect, url_for
-from predictionValidation import PredictionValidation
+from prediction_validation import PredictionValidation
 from prediction_data_validation.prediction_data_validation import PredictionDataValidation
 from model_prediction.Prediction import Prediction
 from application_logging.logger import AppLogger
@@ -20,7 +20,7 @@ def home():
     This function initiates the home page
     :return: html
     """
-    file_object = open("Prediction_Log/apiHandlerLog.txt", 'a+')
+    file_object = open("prediction_log/apiHandlerLog.txt", 'a+')
     logger.log(file_object, 'Initiating app', 'Info')
     try:
         pred_data_val = PredictionDataValidation()
@@ -54,7 +54,7 @@ def manual_input():
     This function helps to get all the manual input provided by the user
     :return: html
     """
-    file_object = open("Prediction_Log/apiHandlerLog.txt", 'a+')
+    file_object = open("prediction_log/apiHandlerLog.txt", 'a+')
     logger.log(file_object, 'Getting input from Form', 'Info')
     try:
         # getting data
@@ -74,7 +74,8 @@ def manual_input():
                     input_data.append(property_col)
                 else:
                     input_data.append(selected[v][0])
-            pd.DataFrame([input], columns=required_columns).to_csv('Prediction_Files/input.csv', index=False)
+            print(len(input_data),len(required_columns))
+            pd.DataFrame([input_data], columns=required_columns).to_csv('Prediction_Files/input.csv', index=False)
         return redirect(url_for('predict'))
     except Exception as e:
         logger.log(file_object, f'Error occured in getting input from Form. Message: {str(e)}', 'Error')
@@ -90,7 +91,7 @@ def predict():
     This function is the gateway for data prediction
     :return: html
     """
-    file_object = open("Prediction_Log/apiHandlerLog.txt", 'a+')
+    file_object = open("prediction_log/apiHandlerLog.txt", 'a+')
     try:
         if os.path.exists('Prediction_Files/Prediction.csv'):
             return redirect(url_for('home'))
@@ -100,29 +101,15 @@ def predict():
         pred_val.validation()
         pred = Prediction()
         # calling perdict to perform prediction
-        prediction, columns = pred.predict()
+        output, probability = pred.predict()
         logger.log(file_object, 'Prediction for data complete', 'Info')
         file_object.close()
-        return render_template('result.html', result=[enumerate(prediction), columns])
+        return render_template('result.html', result={"output": output, "probability": probability})
         # return send_file(os.path.join('Prediction_Files/')+'Prediction.csv', as_attachment=True)
     except Exception as e:
         logger.log(file_object, f'Error occured in prediction. Message: {str(e)}', 'Error')
         file_object.close()
         message = 'Error :: '+str(e)
-        return render_template('exception.html', exception=message)
-
-
-@app.route('/download', methods=['GET'])
-@cross_origin()
-def download():
-    """
-    This function helps to download the predicted output
-    :return: Prediction.csv
-    """
-    try:
-        return send_file(os.path.join('Prediction_Files/')+'Prediction.csv', as_attachment=True)
-    except Exception as e:
-        message = 'Error :: ' + str(e)
         return render_template('exception.html', exception=message)
 
 
@@ -134,10 +121,10 @@ def get_logs():
     :return: ZIP of log
     """
     try:
-        log_files = os.listdir('Prediction_Log/')
+        log_files = os.listdir('prediction_log/')
         with ZipFile("Prediction_Files/Logs.zip", "w") as newzip:
             for i in log_files:
-                newzip.write("Prediction_Log/"+i)
+                newzip.write("prediction_log/"+i)
         return send_file(os.path.join('Prediction_Files/')+'Logs.zip', as_attachment=True)
     except Exception as e:
         message = 'Error :: ' + str(e)
