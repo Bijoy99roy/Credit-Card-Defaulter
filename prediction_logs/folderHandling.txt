@@ -74,3 +74,19 @@
 2021-08-21/14:39:49: Info :		Prediction_Files deleted.
 2021-08-21/14:39:49: Info :		Entered createPredictionFiles method of PredictionDataValidation class
 2021-08-21/14:39:49: None :		Prediction_Files created.
+2021-08-21/21:31:04: Info :		Entered deletePredictionFiles method of PredictionDataValidation class
+2021-08-21/21:31:04: Info :		Input_data deleted.
+2021-08-21/21:31:04: Info :		Entered createPredictionFiles method of PredictionDataValidation class
+2021-08-21/21:31:04: None :		Input_data created.
+2021-08-22/11:08:21: Info :		Entered deletePredictionFiles method of PredictionDataValidation class
+2021-08-22/11:08:21: Info :		Input_data deleted.
+2021-08-22/11:08:21: Info :		Entered createPredictionFiles method of PredictionDataValidation class
+2021-08-22/11:08:21: None :		Input_data created.
+2021-08-22/11:10:51: Info :		Entered deletePredictionFiles method of PredictionDataValidation class
+2021-08-22/11:10:51: Info :		Input_data deleted.
+2021-08-22/11:10:51: Info :		Entered createPredictionFiles method of PredictionDataValidation class
+2021-08-22/11:10:51: None :		Input_data created.
+2021-08-22/11:13:38: Info :		Entered deletePredictionFiles method of PredictionDataValidation class
+2021-08-22/11:13:38: Info :		Input_data deleted.
+2021-08-22/11:13:38: Info :		Entered createPredictionFiles method of PredictionDataValidation class
+2021-08-22/11:13:38: None :		Input_data created.

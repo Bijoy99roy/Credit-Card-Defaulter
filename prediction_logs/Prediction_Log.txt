@@ -335,3 +335,27 @@ Reshape your data either using array.reshape(-1, 1) if your data has a single fe
 2021-08-21/14:40:26: Info :		Entered the loadModel method of FileHandler class
 2021-08-21/14:40:26: Info :		supportVectorClassifier loaded. Exiting loadModel method of FileHandler class
 2021-08-21/14:40:27: Info :		Predction complete!!. Prediction.csv saved in Prediction_File as output.                 Exiting Predict method of Prediction class 
+2021-08-21/21:31:29: None :		Validation started for Prediction Data
+2021-08-21/21:31:29: None :		Starting datatype validation
+2021-08-21/21:31:29: None :		Datatype validation complete!!
+2021-08-21/21:31:29: Info :		Start of Prediction
+2021-08-21/21:31:29: Info :		Entered ScaleData method of PreProcessing class
+2021-08-21/21:31:29: Info :		Initiating Scaling
+2021-08-21/21:31:29: Info :		Entered the loadModel method of FileHandler class
+2021-08-21/21:31:29: Info :		StandardScaler loaded. Exiting loadModel method of FileHandler class
+2021-08-21/21:31:44: Info :		Scaling data complete
+2021-08-21/21:31:44: Info :		Entered the loadModel method of FileHandler class
+2021-08-21/21:31:44: Info :		supportVectorClassifier loaded. Exiting loadModel method of FileHandler class
+2021-08-21/21:31:46: Info :		Predction complete!!. Prediction.csv saved in Prediction_File as output.                 Exiting Predict method of Prediction class 
+2021-08-22/11:19:52: None :		Validation started for Prediction Data
+2021-08-22/11:19:52: None :		Starting datatype validation
+2021-08-22/11:19:52: None :		Datatype validation complete!!
+2021-08-22/11:19:52: Info :		Start of Prediction
+2021-08-22/11:19:52: Info :		Entered ScaleData method of PreProcessing class
+2021-08-22/11:19:52: Info :		Initiating Scaling
+2021-08-22/11:19:52: Info :		Entered the loadModel method of FileHandler class
+2021-08-22/11:19:52: Info :		StandardScaler loaded. Exiting loadModel method of FileHandler class
+2021-08-22/11:19:55: Info :		Scaling data complete
+2021-08-22/11:19:55: Info :		Entered the loadModel method of FileHandler class
+2021-08-22/11:19:55: Info :		supportVectorClassifier loaded. Exiting loadModel method of FileHandler class
+2021-08-22/11:19:55: Info :		Predction complete!!. Prediction.csv saved in Prediction_File as output.                 Exiting Predict method of Prediction class 

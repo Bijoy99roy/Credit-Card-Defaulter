@@ -32,3 +32,7 @@
 2021-08-21/13:19:00: Info :		Datatype validation complete exiting ValidateDataType method of PredictionDataValidation class
 2021-08-21/14:40:24: Info :		Entered ValidateDataType method of PredictionDataValidation class
 2021-08-21/14:40:24: Info :		Datatype validation complete exiting ValidateDataType method of PredictionDataValidation class
+2021-08-21/21:31:29: Info :		Entered ValidateDataType method of PredictionDataValidation class
+2021-08-21/21:31:29: Info :		Datatype validation complete exiting ValidateDataType method of PredictionDataValidation class
+2021-08-22/11:19:52: Info :		Entered ValidateDataType method of PredictionDataValidation class
+2021-08-22/11:19:52: Info :		Datatype validation complete exiting ValidateDataType method of PredictionDataValidation class

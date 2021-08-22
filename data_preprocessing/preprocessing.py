@@ -12,7 +12,9 @@ class PreProcessing:
         This function scales down the data
         :return: scaled data
         """
+        print('sc1')
         self.logger.log(self.file_object, 'Entered ScaleData method of PreProcessing class', 'Info')
+        print('sc2')
         try:
             self.logger.log(self.file_object, 'Initiating Scaling', 'Info')
             scaler = FileHandler(self.file_object, self.logger).load_model('StandardScaler')
@@ -26,4 +28,5 @@ class PreProcessing:
             self.logger.log(self.file_object,
                             'Scaling data failed. Exited the ScaleData method of the Preprocessor class',
                             'Error')
+            self.logger.database.close_connection()
             raise e

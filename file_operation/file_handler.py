@@ -14,7 +14,9 @@ class FileHandler:
         :param filename:
         :return: FileObject
         """
+        print('fil')
         self.logger.log(self.file_object, 'Entered the loadModel method of FileHandler class', 'Info')
+        print('fil2')
         try:
             with open(self.model_path+filename+'.sav', 'rb') as f:
                 self.logger.log(
@@ -28,4 +30,5 @@ class FileHandler:
                 self.file_object,
                 'Error occured in loadModel method of FileHandler class. Message: '+str(e),
                 'Error')
+            self.logger.database.close_connection()
             raise e

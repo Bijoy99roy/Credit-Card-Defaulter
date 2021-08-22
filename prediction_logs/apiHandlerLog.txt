@@ -168,3 +168,38 @@ Reshape your data either using array.reshape(-1, 1) if your data has a single fe
 2021-08-21/14:40:24: Info :		Getting input from Form
 2021-08-21/14:40:24: Info :		Prediction Initiated..
 2021-08-21/14:40:27: Info :		Prediction for data complete
+2021-08-21/21:31:04: Info :		Initiating app
+2021-08-21/21:31:04: Info :		Deletion and creation of Input_data complete. Exiting method...
+2021-08-21/21:31:29: Info :		Getting input from Form
+2021-08-21/21:31:29: Info :		Prediction Initiated..
+2021-08-21/21:31:46: Info :		Prediction for data complete
+2021-08-22/11:08:21: Info :		Initiating app
+2021-08-22/11:08:22: Info :		Deletion and creation of Input_data complete. Exiting method...
+2021-08-22/11:08:43: Info :		Getting input from Form
+2021-08-22/11:08:43: Info :		Prediction Initiated..
+2021-08-22/11:08:43: Error :		Error occured in prediction. Message: [Errno 2] No such file or directory: '../prediction_log/Prediction_Log.txt'
+2021-08-22/11:10:26: Info :		Getting input from Form
+2021-08-22/11:10:26: Info :		Prediction Initiated..
+2021-08-22/11:10:26: Error :		Error occured in prediction. Message: [Errno 2] No such file or directory: '../prediction_log/Prediction_Log.txt'
+2021-08-22/11:10:51: Info :		Initiating app
+2021-08-22/11:10:51: Info :		Deletion and creation of Input_data complete. Exiting method...
+2021-08-22/11:11:11: Info :		Getting input from Form
+2021-08-22/11:11:11: Info :		Prediction Initiated..
+2021-08-22/11:11:11: Error :		Error occured in prediction. Message: [Errno 2] No such file or directory: '../prediction_log/Prediction_Log.txt'
+2021-08-22/11:13:34: Info :		Getting input from Form
+2021-08-22/11:13:35: Info :		Prediction Initiated..
+2021-08-22/11:13:35: Error :		Error occured in prediction. Message: [Errno 2] No such file or directory: '../prediction_logs/Prediction_Log.txt'
+2021-08-22/11:13:38: Info :		Initiating app
+2021-08-22/11:13:38: Info :		Deletion and creation of Input_data complete. Exiting method...
+2021-08-22/11:14:01: Info :		Getting input from Form
+2021-08-22/11:14:01: Info :		Prediction Initiated..
+2021-08-22/11:14:01: Error :		Error occured in prediction. Message: [Errno 2] No such file or directory: '../prediction_logs/Prediction_Log.txt'
+2021-08-22/11:18:14: Info :		Getting input from Form
+2021-08-22/11:18:14: Info :		Prediction Initiated..
+2021-08-22/11:18:14: Error :		Error occured in prediction. Message: [Errno 2] No such file or directory: '../prediction_logs/Prediction_Log.txt'
+2021-08-22/11:19:36: Info :		Getting input from Form
+2021-08-22/11:19:36: Info :		Prediction Initiated..
+2021-08-22/11:19:36: Error :		Error occured in prediction. Message: [Errno 2] No such file or directory: '/prediction_logs/Prediction_Log.txt'
+2021-08-22/11:19:52: Info :		Getting input from Form
+2021-08-22/11:19:52: Info :		Prediction Initiated..
+2021-08-22/11:19:55: Info :		Prediction for data complete
