@@ -17,12 +17,6 @@ The dataset used here is Default of credit card clients dataset from kaggle
 ![App Screenshot](/screenshots/homepage.PNG)
 
   
-## 📖Documentation
-You can get the Documentation for this project here
-
-### [Documentation](https://drive.google.com/drive/folders/1HIGJ57NxvFujYyZBKwMVQPrMMFbOfC5r?usp=sharing)
-
-  
 ## 🛠 Requirements to run project
 
 - Python 3.6
