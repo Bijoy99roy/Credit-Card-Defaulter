@@ -4,7 +4,6 @@ import os
 import numpy as np
 from application_logging.logger import AppLogger
 from prediction_data_validation.prediction_data_validation import PredictionDataValidation
-from data_preprocessing.preprocessing import PreProcessing
 from file_operation.file_handler import FileHandler
 
 
@@ -24,8 +23,6 @@ class Prediction:
 
         try:
             self.logger.log(self.table_name, 'Start of Prediction', 'Info')
-            # initializing PreProcessor object
-            preprocessor = PreProcessing(self.table_name, self.logger)
             # initializing FileHandler object
             file_handler = FileHandler(self.table_name, self.logger)
             # getting the data file path
@@ -33,18 +30,13 @@ class Prediction:
             # reading data file
             dataframe = pd.read_csv('Input_data/'+file)
             data = dataframe.copy()
-            # receiving values as tuple
-            columninfo = self.pred_data_val.get_schema_values()
-            numerical_columns = columninfo[3]
-            # Scaling the data
-            data = preprocessor.scale_data(data, numerical_columns)
             data = np.array(data)
 
-            # loading Logistic Regression model
-            support_vector_classifier = file_handler.load_model('SupportVectorClassifier')
+            # loading Gradient Boosting Classifier model
+            gradient_boosting_classifier = file_handler.load_model('GradientBoostingClassifier')
             # predicting
-            predicted = support_vector_classifier.predict(data)
-            probability = support_vector_classifier.predict_proba(data)[0]
+            predicted = gradient_boosting_classifier.predict(data)
+            probability = gradient_boosting_classifier.predict_proba(data)[0]
             output = 'may be default' if predicted == 1 else 'may not default'
             probability = round(max(probability) * 100, 2)
             self.logger.log(

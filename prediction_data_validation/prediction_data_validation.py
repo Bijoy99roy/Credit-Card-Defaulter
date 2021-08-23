@@ -78,8 +78,6 @@ class PredictionDataValidation:
             column_names = dic["columnNames"]
             column_number = dic["columnNumber"]
             required_columns = dic["RequiredColumns"]
-            numerical_columns = dic["Numerical"]
-            output_columns = dic["Output"]
 
             message = "ColumnNumber: "+str(column_number)+"\t"+"RequiredColumns: "+str(required_columns)+"\n"
             self.logger.log(table_name, message, 'Info')
@@ -100,8 +98,8 @@ class PredictionDataValidation:
             self.logger.log(table_name, str(e), 'Error')
             self.logger.database.close_connection()
             raise e
-        # returning tuple of these 5 values
-        return column_number, column_names, required_columns, numerical_columns, output_columns
+        # returning tuple of these 3 values
+        return column_number, column_names, required_columns
 
     def validate_data_type(self):
         """

@@ -23,6 +23,8 @@ The dataset used here is Default of credit card clients dataset from kaggle
 - Numpy
 - Pandas
 - Flask
+- Scikit-learn v0.24.1
+- cassandra-driver
 
 ## 🛠 Requirements to perform EDA
 
@@ -31,6 +33,7 @@ The dataset used here is Default of credit card clients dataset from kaggle
 - Pandas
 - Matplotlib
 - Seaborn
+- scikit-learn
 
   
 ## Tech Stack

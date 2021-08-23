@@ -28,8 +28,5 @@
       "NINE_ABOVE_MONTH": 9
     }
   },
-  "RequiredColumns": ["LIMIT_BAL", "SEX","EDUCATION","AGE","PAY_0","PAY2","PAY3","PAY_4","PAY_5","PAY_6","BILL_AMT1","BILL_AMT2","BILL_AMT3","BILL_AMT4","BILL_AMT5","BILL_AMT6","PAY_AMT1","PAY_AMT2","PAY_AMT3","PAY_AMT4","PAY_AMT5","PAY_AMT6"],
-  "Numerical": ["AGE","LIMIT_BAL","BILL_AMT1","BILL_AMT2","BILL_AMT3","BILL_AMT4","BILL_AMT5","BILL_AMT6","PAY_AMT1","PAY_AMT2","PAY_AMT3","PAY_AMT4","PAY_AMT5","PAY_AMT6"],
-  "Output" : ["LIMIT_BAL", "SEX","EDUCATION","AGE","Repayment Status(September)","Repayment Status(August)", "Repayment Status(July)", "Repayment Status(June)", "Repayment Status(May)", "Repayment Status(April)","Bill Statement(September)", "Bill Statement(August)", "Bill Statement(July)", "Bill Statement(June)", "Bill Statement(May)", "Bill Statement(April)","Previous Payment(September)", "Previous Payment(August)", "Previous Payment(July)", "Previous Payment(June)", "Previous Payment(May)", "Previous Payment(April)"]
-
+  "RequiredColumns": ["LIMIT_BAL", "SEX","EDUCATION","AGE","PAY_0","PAY2","PAY3","PAY_4","PAY_5","PAY_6","BILL_AMT1","BILL_AMT2","BILL_AMT3","BILL_AMT4","BILL_AMT5","BILL_AMT6","PAY_AMT1","PAY_AMT2","PAY_AMT3","PAY_AMT4","PAY_AMT5","PAY_AMT6"]
 }

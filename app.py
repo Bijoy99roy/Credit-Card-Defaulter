@@ -100,7 +100,6 @@ def predict():
     :return: html
     """
 
-    file_object = open("prediction_logs/apiHandlerLog.txt", 'a+')
     try:
         if os.path.exists('Input_data/Prediction.csv'):
             return redirect(url_for('home'))
@@ -116,7 +115,6 @@ def predict():
         return render_template('result.html', result={"output": output, "probability": probability})
     except Exception as e:
         logger.log(table_name, f'Error occured in prediction. Message: {str(e)}', 'Error')
-        file_object.close()
         message = 'Error :: '+str(e)
         logger.database.close_connection()
         return render_template('exception.html', exception=message)
