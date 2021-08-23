@@ -10,17 +10,18 @@ class PredictionValidation:
         self.logger.database.connect_db()
 
     def validation(self):
-        #file = open("prediction_logs/Prediction_Log.txt", "a+")
-        file = 'prediction_log'
-        try:
-            self.logger.log(file, "Validation started for Prediction Data", "Info")
-            # validating Datatype
-            self.logger.log(file, "Starting datatype validation", "Info")
-            self.raw_data.validate_data_type()
-            self.logger.log(file, "Datatype validation complete!!", "Info")
-            #file.close()
+        """
 
+        :return:
+        """
+        table_name = 'prediction_log'
+        try:
+            self.logger.log(table_name, "Validation started for Prediction Data", "Info")
+            # validating Datatype
+            self.logger.log(table_name, "Starting datatype validation", "Info")
+            self.raw_data.validate_data_type()
+            self.logger.log(table_name, "Datatype validation complete!!", "Info")
         except Exception as e:
-            #file.close()
+            self.logger.log(table_name, "Error ocurred while performing validation. Error: " + str(e), "Error")
             self.logger.database.close_connection()
             raise e

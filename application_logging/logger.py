@@ -15,11 +15,3 @@ class AppLogger:
         date = now.date()
         current_time = now.strftime('%H:%M:%S')
         self.database.insert_data(table_name, date, current_time, message, level)
-
-    # def log(self, file_object, log_message, level=None):
-    #     now = datetime.now()
-    #     date = now.date()
-    #     current_time = now.strftime('%H:%M:%S')
-    #     file_object.write(
-    #         str(date)+'/'+str(current_time)+': '+str(level)+' :'+'\t\t'+log_message+'\n'
-    #     )
