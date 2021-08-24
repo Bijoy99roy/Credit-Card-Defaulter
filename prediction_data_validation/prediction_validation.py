@@ -11,9 +11,9 @@ class PredictionValidation:
 
     def validation(self):
         """
-
-        :return:
+        Calling the validation
         """
+
         table_name = 'prediction_log'
         try:
             self.logger.log(table_name, "Validation started for Prediction Data", "Info")

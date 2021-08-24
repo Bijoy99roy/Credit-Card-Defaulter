@@ -41,8 +41,7 @@ class Prediction:
             probability = round(max(probability) * 100, 2)
             self.logger.log(
                 self.table_name,
-                'Predction complete!!. Prediction.csv saved in Prediction_File as output. \
-                Exiting Predict method of Prediction class ',
+                'Predction complete!!. Exiting Predict method of Prediction class ',
                 'Info')
             self.logger.database.close_connection()
             return output, probability
