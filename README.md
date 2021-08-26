@@ -11,7 +11,8 @@ The dataset used here is Default of credit card clients dataset from kaggle
 ```URL
   https://www.kaggle.com/uciml/default-of-credit-card-clients-dataset
 ```
-  
+## 🚀Deployed app
+- [Launch App](https://credit-card-default2.herokuapp.com)
 ## Screenshots
 
 ![App Screenshot](/screenshots/homepage.PNG)
